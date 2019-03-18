@@ -1,23 +1,14 @@
 import React from 'react';
+import Timeline from './Timeline';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props)
-    };
-
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <h1 className="text-center col-md-12">Chirper</h1>
-                </div>
-                <div className='row'>
-                    <h3 className="text-center col-md-12">Timeline</h3>
-                </div>
-            </div>
-        )
-
-    }
-}
+const App = () => {
+    return (
+    <div className="container">
+        <div className="row">
+            <h1 className="text-center col-md-12">Chirper</h1>
+        </div>
+        <Timeline />
+    </div>
+)}
 
 export default App;
