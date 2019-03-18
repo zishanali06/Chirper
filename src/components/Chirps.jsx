@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Chirps = props => {
+const Chirps = (props) => {
     //ES6 descruturing an object
     const { user, chirptext } = props.chirp;
-
-    if (user === undefined) {
-        let user = "Anon";
-    }
 
     return (
         <div>

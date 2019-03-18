@@ -1,5 +1,4 @@
 import React from 'react';
-import InsertChirp from './InsertChirp';
 import Chirps from './Chirps';
 
 
@@ -8,9 +7,9 @@ class Timeline extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            newChirp: false,
             chirpsArray: [],
-            chirptext: ""
+            chirptext: "",
+            user: ""
         }
     }
 
@@ -32,7 +31,7 @@ class Timeline extends React.Component {
 
         // this.state.chirpsArray = chirpsArray; NONONONO bad
 
-        this.setState({ chirpsArray });
+        this.setState({ chirpsArray: chirpsArray });
 
     }
 
@@ -41,7 +40,7 @@ class Timeline extends React.Component {
         e.preventDefault();
 
         let chirp = {
-            user: "Zishan",
+            user: this.state.user,
             chirptext: this.state.chirptext
         };
 
@@ -49,8 +48,11 @@ class Timeline extends React.Component {
 
         this.setState({
             chirpsArray: [chirp, ...this.state.chirpsArray],
-            chirptext: ""
+            chirptext: "",
+            user: ""
         });
+
+
     }
 
     render() {
@@ -66,6 +68,12 @@ class Timeline extends React.Component {
                             className="my-3 form-control"
                             value={this.state.chirptext}
                             onChange={e => this.setState({ chirptext: e.target.value })} />
+                        <input
+                            type="text"
+                            placeholder="Type Username Here"
+                            className="my-3 form-control"
+                            value={this.state.user}
+                            onChange={e => this.setState({ user: e.target.value })} />
                         <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
                     </form>
                 </div>
