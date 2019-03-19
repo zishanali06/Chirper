@@ -52,7 +52,7 @@ class Timeline extends React.Component {
             chirptext: ""
         });
 
-        if(this.state.reuse === true){
+        if (this.state.reuse === true) {
             this.setState({ user: chirp.user })
         } else {
             this.setState({ user: "" })
@@ -60,7 +60,7 @@ class Timeline extends React.Component {
     }
 
     handleCheckbox = e => {
-        if(this.state.reuse === true){
+        if (this.state.reuse === true) {
             this.setState({ reuse: false })
         } else {
             this.setState({ reuse: true })
@@ -72,7 +72,7 @@ class Timeline extends React.Component {
             <div className='row'>
                 <h3 className="text-center col-md-12 mb-3">Timeline</h3>
                 <div className='col-3'>
-                    <h4>Insert New Chirps</h4>
+                    {/* <h4>Insert New Chirps</h4>
                     <form className="form-group p-3 border border-info rounded">
                         <input
                             type="text"
@@ -91,14 +91,38 @@ class Timeline extends React.Component {
                         </label>
                         <br/>
                         <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
-                    </form>
+                    </form> */}
                 </div>
-                <div className='col-6 border border-primary rounded'>
-                    <ul>
-                        {this.state.chirpsArray.map((chirp, index) => {
-                            return <Chirps key={index} chirp={chirp} />
-                        })}
-                    </ul>
+                <div className='col-6 border border-primary rounded text-center'>
+                    <h4>Insert New Chirps</h4>
+                    <form className="form-group p-3 border border-info rounded col-md-12">
+                        <input
+                            type="text"
+                            placeholder="Type Chirp Here"
+                            className="my-3 form-control"
+                            value={this.state.chirptext}
+                            onChange={e => this.setState({ chirptext: e.target.value })} />
+                        <input
+                            type="text"
+                            placeholder="Type Username Here"
+                            className="my-3 form-control"
+                            value={this.state.user}
+                            onChange={e => this.setState({ user: e.target.value })} />
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="reuse"
+                                checked={this.state.reuse}
+                                onChange={this.handleCheckbox} />
+                            Check for same User on next Chirp
+                        </label>
+                        <br />
+                        <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
+                    </form>
+                    {this.state.chirpsArray.map((yolo, index) => {
+                        return <Chirps key={index} chirp={yolo} />
+                    })}
+
                 </div>
                 <div className='col-3'></div>
             </div>

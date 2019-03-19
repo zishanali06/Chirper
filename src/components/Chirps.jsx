@@ -5,8 +5,8 @@ const Chirps = (props) => {
     const { user, chirptext } = props.chirp;
 
     return (
-        <div>
-            <p><img src="http://joshi-ma.net/wp-content/uploads/e034.gif" alt=""/>{`  ${user}: ${chirptext}`}</p>
+        <div className="text-left">
+            <p className="border border-secondary rounded"><img src="http://joshi-ma.net/wp-content/uploads/e034.gif" alt=""/>{`  ${user}: ${chirptext}`}</p>
         </div>
     );
 }
