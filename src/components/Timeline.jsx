@@ -72,26 +72,6 @@ class Timeline extends React.Component {
             <div className='row'>
                 <h3 className="text-center col-md-12 mb-3">Timeline</h3>
                 <div className='col-3'>
-                    {/* <h4>Insert New Chirps</h4>
-                    <form className="form-group p-3 border border-info rounded">
-                        <input
-                            type="text"
-                            placeholder="Type Chirp Here"
-                            className="my-3 form-control"
-                            value={this.state.chirptext}
-                            onChange={e => this.setState({ chirptext: e.target.value })} />
-                        <input
-                            type="text"
-                            placeholder="Type Username Here"
-                            className="my-3 form-control"
-                            value={this.state.user}
-                            onChange={e => this.setState({ user: e.target.value })} />
-                        <label>Check for same User on next Chirp
-                        <input type="checkbox" name="reuse" checked={this.state.reuse} onChange={this.handleCheckbox}/>
-                        </label>
-                        <br/>
-                        <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
-                    </form> */}
                 </div>
                 <div className='col-6 border border-primary rounded text-center'>
                     <h4>Insert New Chirps</h4>
@@ -117,7 +97,7 @@ class Timeline extends React.Component {
                             Check for same User on next Chirp
                         </label>
                         <br />
-                        <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
+                        <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add <img src="http://joshi-ma.net/wp-content/uploads/e034.gif" alt=""/></button>
                     </form>
                     {this.state.chirpsArray.map((yolo, index) => {
                         return <Chirps key={index} chirp={yolo} />
