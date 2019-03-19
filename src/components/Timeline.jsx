@@ -9,7 +9,8 @@ class Timeline extends React.Component {
         this.state = {
             chirpsArray: [],
             chirptext: "",
-            user: ""
+            user: "",
+            reuse: false
         }
     }
 
@@ -48,12 +49,23 @@ class Timeline extends React.Component {
 
         this.setState({
             chirpsArray: [chirp, ...this.state.chirpsArray],
-            chirptext: "",
-            user: ""
+            chirptext: ""
         });
 
-
+        if(this.state.reuse === true){
+            this.setState({ user: chirp.user })
+        } else {
+            this.setState({ user: "" })
+        };
     }
+
+    handleCheckbox = e => {
+        if(this.state.reuse === true){
+            this.setState({ reuse: false })
+        } else {
+            this.setState({ reuse: true })
+        };
+    };
 
     render() {
         return (
@@ -74,6 +86,10 @@ class Timeline extends React.Component {
                             className="my-3 form-control"
                             value={this.state.user}
                             onChange={e => this.setState({ user: e.target.value })} />
+                        <label>Check for same User on next Chirp
+                        <input type="checkbox" name="reuse" checked={this.state.reuse} onChange={this.handleCheckbox}/>
+                        </label>
+                        <br/>
                         <button className="btn btn-outline-primary btn-sm" onClick={this.handleonClick}>Click to Add</button>
                     </form>
                 </div>

@@ -6,7 +6,7 @@ const Chirps = (props) => {
 
     return (
         <div>
-            <p>{`${user}: ${chirptext}`}</p>
+            <p><img src="http://joshi-ma.net/wp-content/uploads/e034.gif" alt=""/>{`  ${user}: ${chirptext}`}</p>
         </div>
     );
 }
